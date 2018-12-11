@@ -70,7 +70,47 @@
         <div class="col-sm-2 sidenav"></div>
         <div class="col-sm-8 text-left">
             <h1>Data Analysis</h1>
+
+            <!--EDA-->
             <h2>Exploratory Data Analysis</h2>
+            We first spent a long time cleaning and parsing the massive datasets. We had to overcome storage capacity issues.
+            <br>
+            Below we show the snippets of the 3 dataframes we will be working with.
+            <li>Million Playlists Dataframe</li>
+            <li>Songs from the Million Playlists Dataframe (each playlist has a list of songs)</li>
+
+            <hr>
+            <h3>Exploring Million Playlist Dataset</h3>
+            Here's a snippet of our playlist dataframe in our python notebook:
+            <img src="img/snippet1.png" style="width: 800px; height:300px">
+            <br>
+            This is a snippet of the dataframe for our million playlist dataset (the first slice, 1000 playlists).
+            We can see from here, useful variables may be number of followers, number of songs, and possibly the number
+            of artists. We will explore this further.
+            <br><br>
+            Here we have all the songs in the 1000 playlist set with an added column that links the song to the
+            corresponding playlist. Now we have two dataframe that are linked through the "pid" and we hope to use
+            information from both tables to make better recommendations.
+            <img src="img/snippet2.png" style="width: 800px; height:300px">
+
+            <!--Visualizations-->
+            <hr>
+            <h3>Preliminary Visualizations</h3>
+            Insights we have gained from the EDA and the following preliminary visualizations:
+            <li>The average number of songs in a playlist is about 70 songs</li>
+            <li>Most playlists only have 1 follower. We may want to consider to value playlists that have a larger following,
+                which makes the music selection more accreditted, and therefore will likely have better recommendations</li>
+            <li>Here we can see that the average of the average song duration per playlist is 233314 ms. We can use
+                this to create an interval that describes a reasonable song duration and use it as a cut-off.</li>
+            <div class="col-sm-12">
+                <img src="img/g1.png" style="width:225px; height:200px">
+                <img src="img/g2.png" style="width:225px; height:200px">
+                <img src="img/g3.png" style="width:225px; height:200px">
+            </div>
+
+            <!--Ending note-->
+            <hr>
+
         </div>
         <div class="col-sm-2 sidenav"></div>
     </div>
