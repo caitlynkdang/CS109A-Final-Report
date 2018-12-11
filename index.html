@@ -70,34 +70,73 @@
         <div class="col-sm-2 sidenav"></div>
         <div class="col-sm-8 text-left" id="Project">
             <h1>CS109A Final Project Report</h1>
+
+            <!--Introduction-->
             <hr>
-            <h3>Contributors</h3>
+            <h2>Contributors</h2>
             <li>Siddhant Agrawal, '19</li>
             <li>Caitlyn Dang, '20</li>
             <li>Meriton Ibrahimi, '19</li>
             <li>Moh Osman, '20</li>
 
+            <!--Project Statement-->
+            <hr>
+            <h2>Abstract</h2>
+
             <!--Data-->
             <hr>
-            <h3>Data</h3>
-            <p>The <b>Million Playlist Dataset</b> contains 1,000,000 playlists created by users on the Spotify platform.
+            <h2>Data</h2>
+            <h3>Million Playlist Dataset</h3>
+                The <b>Million Playlist Dataset</b> contains 1,000,000 playlists created by users on the Spotify platform.
                 These playlists were created during the period of January 2010 through October 2017. Each playlist in
                 the MPD contains a playlist title, the track list (including track metadata) editing information (last
                 edit time, number of playlist edits) and other miscellaneous information about the playlist.
-            </p>
+
             <h4>Detailed Description</h4>
-            <p>The Million Playlist Dataset consists of 1,000 slice files. These files have the naming convention of:
+                The Million Playlist Dataset consists of 1,000 slice files. These files have the naming convention of:
                 <ul>mpd.slice._STARTING_PLAYLIST_ID_-_ENDING_PLAYLIST_ID_.json</ul>
                 For example, the first 1,000 playlists in the MPD are in a file called  mpd.slice.0-999.json and the last
-            1,000 playlists are in a file called mpd.slice.999000-999999.json. Each slice file is a JSON dictionary with
-            two fields: info and playlists.
-            </p>
-            <h4>info Field</h4>
-            The info field is a dictionary that contains general information about the particular slice:
+                1,000 playlists are in a file called mpd.slice.999000-999999.json. Each slice file is a JSON dictionary with
+                two fields: info and playlists.
 
-            <li>slice - the range of slices that in in this particular file - such as 0-999</li>
-            <li>version - - the current version of the MPD (which should be v1)</li>
-            <li>generated_on - a timestamp indicating when the slice was generated.</li>
+            <h4>info Field</h4>
+                The info field is a dictionary that contains general information about the particular slice:
+                <li>slice - the range of slices that in in this particular file - such as 0-999</li>
+                <li>version - - the current version of the MPD (which should be v1)</li>
+                <li>generated_on - a timestamp indicating when the slice was generated.</li>
+
+            <h4>playlists Field</h4>
+                This is an array that typically contains 1,000 playlists. Each playlist is a dictionary that contains
+                the following fields:
+                <li>pid - integer - playlist id - the MPD ID of this playlist. This is an integer between 0 and
+                    999,999.</li>
+                <li>name - string - the name of the playlist</li>
+                <li> description - optional string - if present, the description given to the playlist. Note that userprovided
+                playlist descrptions are a relatively new feature of Spotify, so most playlists do not
+                    have descriptions. </li>
+                <li>modified_at - seconds - timestamp (in seconds since the epoch) when this playlist was last
+                    updated. Times are rounded to midnight GMT of the date when the playlist was last updated.</li>
+                <li>num_artists - the total number of unique artists for the tracks in the playlist.</li>
+                <li>num_albums - the number of unique albums for the tracks in the playlist</li>
+                <li>num_tracks - the number of tracks in the playlist</li>
+                <li>num_followers - the number of followers this playlist had at the time the MPD was created.
+                    (Note that the follower count does not including the playlist creator)</li>
+                <li>num_edits - the number of separate editing sessions. Tracks added in a two hour window
+                    are considered to be added in a single editing session.</li>
+                <li>duration_ms - the total duration of all the tracks in the playlist (in milliseconds)</li>
+                <li>collaborative - boolean - if true, the playlist is a collaborative playlist. Multiple users may
+                    contribute tracks to a collaborative playlist.</li>
+                <li>tracks - an array of information about each track in the playlist. Each element in the array is
+                    a dictionary with the following fields:</li>
+                <li>track_name - the name of the track</li>
+                <li>track_uri - the Spotify URI of the track</li>
+                <li>album_name - the name of the track’s album</li>
+                <li>album_uri - the Spotify URI of the album</li>
+                <li>artist_name - the name of the track’s primary artist</li>
+                <li>artist_uri - the Spotify URI of track’s primary artist</li>
+                <li>duration_ms - the duration of the track in milliseconds</li>
+                <li>pos - the position of the track in the playlist (zero-based)</li>
+            <hr>
         </div>
         <div class="col-sm-2 sidenav"></div>
     </div>
