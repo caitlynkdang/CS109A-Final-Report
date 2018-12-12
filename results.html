@@ -108,9 +108,27 @@
 
             <hr>
             <h1>Conclusion</h1>
+            Prior to testing our models on the test dataset, we hypothesized that Layer 1 and Layer 2 combined would be the
+            model with the highest accuracy because we were comparing not only playlist similarity, but also song similarity.
+            At first, we were surprised with our results that the model with only Layer 1 and without weights performed the best.
+            However, in hindsight we can see how Layer 2 fails to add a subjective layer to the recommender system because
+            audio features are very objective metrics that people don't really use to select songs.
+            <br><br>
+            Overall, we do believe there is value in Layer 2 if we were to better select the attributes used. We discuss this below.
 
             <hr>
             <h1>Future Work</h1>
+            A drawback from our model was that it was making several API calls that made the model super slow. An idea we had
+            if we had the storage would be to store the song attributes for quick access.
+            <br><br>
+            In addition, we can look at different levels of similarity for the Spotify API Audio Features. For example, excluding
+            some features that we believe would just add noise to the model.
+            <br><br>
+            We can also look into better ways to find similarity between the input playlist and the training playlists. Instead
+            of simply finding song overlap, we could first categorize the playlists into different types (i.e. genre or time period).
+            <br><br>
+            There are several ways we can find similarities. If we had more time in the future, we would look into matching algorithms
+            more and see if we could apply what we learn to our Music Recommender System.
             <hr>
 
         </div>
