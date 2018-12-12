@@ -60,8 +60,8 @@
                 <li><a href="index.html">Project Statement</a></li>
                 <li><a href="data.html">Data Analysis</a></li>
                 <li><a href="model.html">Model</a></li>
-                <li class="active"><a href="results.html">Results</a></li>
-                <li><a href="references.html">References</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li class="active"><a href="references.html">References</a></li>
             </ul>
         </div>
     </div>
@@ -71,47 +71,15 @@
     <div class="row content">
         <div class="col-sm-2 sidenav"></div>
         <div class="col-sm-8 text-left">
-            <h1>Result</h1>
-            <h2>Calculating Accuracy</h2>
-            Accuracy is found taking the overlap of the list of missing songs and the list of recommended songs to see and
-            dividing it by the number of missing songs.
-            <br>
-            $${Accuracy = \frac{(\texttt{list of missing songs}) \bigcup (\texttt{list of recommended songs})}{\texttt{number of missing songs}}}$$
+            <h1>References</h1>
+            <h2>Related Work</h2>
+            <li><a href="https://recsys-challenge.spotify.com/rules">Spotify Challenge Rules</a></li>
+            <li><a href="https://medium.com/@boplantinga/what-do-spotifys-audio-features-tell-us-about-this-year-s-eurovision-song-contest-66ad188e112a">Article on Spotify Features</a></li>
 
-            <h2>Model: Layer 1 without weights</h2>
-            This is the simpliest model we created. Finding the song overlaps between the input playlist and the training
-            playlists and recommending over 300 songs as explained in the Model section. This model performed the best out
-            of our three models. Our insights are explained in the other models.
-
-            <li>Accuracy: 0.28</li>
-
-            <h2>Model: Layer 1 with weights</h2>
-            We tested Layer 1, including the weights for the number of followers the training playlists have. We see that
-            this performed worse than without weights. We believe that this is because the number of followers are not
-            indicative of how related the songs are within the playlist. For example, a "Throwback" playlist might be a
-            list of songs before the year 2000 and another playlist "Top Pop Music" will be a collection of songs that
-            are pop music. The songs within these playlists are similar to each other in a different way. One is by time
-            period, and the other by genre. Since the type of playlists will likely to not match up to the input playlist,
-            it doesn't make sense to put a weight to playlist that might skew a representation of a type of playlist (i.e.
-            a genre based playlist vs. a time period playlist).
-
-            <li>Accuracy: 0.16</li>
-
-            <h2>Model: Layer 1 without weights + Layer 2</h2>
-            The last model we tested was without the weights in Layer 1, since it performed worse, and adding
-            Layer 2. We see that the accuracy score is still lower the first model. We hypothesize that
-            this is because audio features/ attributes do not have a subjective layer that is necessary to
-            recommend songs.
-
-            <li>Accuracy: 0.18</li>
-
-            <hr>
-            <h1>Conclusion</h1>
-
-            <hr>
-            <h1>Future Work</h1>
-            <hr>
-
+            <h3>Website</h3>
+            <li><a href="https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_temp_webpage&stacked=h">Template</a></li>
+            <li><a href="https://www.flaticon.com/packs/avatar-set">Avatar Icons</a></li>
+            <li><a href="https://seeklogo.com/vector-logo/256010/spotify-2014">Spotify Logo</a></li>
         </div>
         <div class="col-sm-2 sidenav"></div>
     </div>
