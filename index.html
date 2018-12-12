@@ -70,6 +70,7 @@
         <div class="col-sm-2 sidenav"></div>
         <div class="col-sm-8 text-left">
             <h1>CS109A Final Project Report</h1>
+            <br>
             <div class="col-sm-3">
                 <img src="img/sid.png" style="width:100px; height:100px;"><br>
                 <b>Siddhant Agrawal</b><br>
@@ -123,91 +124,16 @@
                 developed model(s) for automatic playlist generation.
                 <br><br>
                 See <a ahref="https://github.com/Harvard-IACS/2018-CS109A/blob/master/content/projects/Spotify_ProjectDescription.pdf">project details</a> for more information of our project assignment.
+
+                <!--Motivation-->
                 <hr>
-            </div>
-
-            <div class="col-sm-8 text-left">
-                <!--Data-->
-                <h2>Data</h2>
-                After our Exploratory Data Analysis, we narrowed down our resources two resources: The <b>Million Playlist
-                Dataset</b> and the <b>Spotify API</b>.
-
-                <h3>Million Playlist Dataset</h3>
-                The <b>Million Playlist Dataset</b> contains 1,000,000 playlists created by users on the Spotify platform.
-                These playlists were created during the period of January 2010 through October 2017. Each playlist in
-                the MPD contains a playlist title, the track list (including track metadata) editing information (last
-                edit time, number of playlist edits) and other miscellaneous information about the playlist.
-
-                <h4>Detailed Description</h4>
-                The Million Playlist Dataset consists of 1,000 slice files. These files have the naming convention of:
-                <ul>mpd.slice._STARTING_PLAYLIST_ID_-_ENDING_PLAYLIST_ID_.json</ul>
-                For example, the first 1,000 playlists in the MPD are in a file called  mpd.slice.0-999.json and the last
-                1,000 playlists are in a file called mpd.slice.999000-999999.json. Each slice file is a JSON dictionary with
-                two fields: info and playlists.
-            </div>
-            <div class="col-sm-3">
-                <img src="img/spotify.png" style="width:231px; height:300px;">
-            </div>
-
-            <div class="col-sm-12 text-left">
-                <h4>info Field</h4>
-                The info field is a dictionary that contains general information about the particular slice:
-                <li>slice - the range of slices that in in this particular file - such as 0-999</li>
-                <li>version - - the current version of the MPD (which should be v1)</li>
-                <li>generated_on - a timestamp indicating when the slice was generated.</li>
-
-                <h4>playlists Field</h4>
-                This is an array that typically contains 1,000 playlists. Each playlist is a dictionary that contains
-                the following fields:
-                <li>pid - integer - playlist id - the MPD ID of this playlist. This is an integer between 0 and
-                    999,999.</li>
-                <li>name - string - the name of the playlist</li>
-                <li> description - optional string - if present, the description given to the playlist. Note that userprovided
-                    playlist descrptions are a relatively new feature of Spotify, so most playlists do not
-                    have descriptions. </li>
-                <li>modified_at - seconds - timestamp (in seconds since the epoch) when this playlist was last
-                    updated. Times are rounded to midnight GMT of the date when the playlist was last updated.</li>
-                <li>num_artists - the total number of unique artists for the tracks in the playlist.</li>
-                <li>num_albums - the number of unique albums for the tracks in the playlist</li>
-                <li>num_tracks - the number of tracks in the playlist</li>
-                <li>num_followers - the number of followers this playlist had at the time the MPD was created.
-                    (Note that the follower count does not including the playlist creator)</li>
-                <li>num_edits - the number of separate editing sessions. Tracks added in a two hour window
-                    are considered to be added in a single editing session.</li>
-                <li>duration_ms - the total duration of all the tracks in the playlist (in milliseconds)</li>
-                <li>collaborative - boolean - if true, the playlist is a collaborative playlist. Multiple users may
-                    contribute tracks to a collaborative playlist.</li>
-                <li>tracks - an array of information about each track in the playlist. Each element in the array is
-                    a dictionary with the following fields:</li>
-                <li>track_name - the name of the track</li>
-                <li>track_uri - the Spotify URI of the track</li>
-                <li>album_name - the name of the track’s album</li>
-                <li>album_uri - the Spotify URI of the album</li>
-                <li>artist_name - the name of the track’s primary artist</li>
-                <li>artist_uri - the Spotify URI of track’s primary artist</li>
-                <li>duration_ms - the duration of the track in milliseconds</li>
-                <li>pos - the position of the track in the playlist (zero-based)</li>
+                <h2>Motivation</h2>
+                As avid music listeners, from trap music to hard core Taylor Swift, with cravings for new tracks to listen to,
+                we knew we wanted to create a Music Recommender System (MRS). While creating our algorithm, we kept in mind
+                what we would want our MRS to recommend to our own Spotify playlists. Recommending songs is never easy, but
+                we were up for the challenge and are excited to use to tools we've learned in Data Science to see how accurate
+                we can get our Music Recommender System can be. Wish us luck!
                 <hr>
-                hr
-
-                <!--Spotify-->
-                <h3>Spotify API</h3>
-                After our Exploratory Data Analysis, realized that our data was not detailed enough at the song level. We
-                wanted a model that could recommend songs based on song attributes. As a result, we decided to link our
-                Million Playlist Dataset (using the Spotify URI for the track) and draw song attributes from the Spotify API. The
-                song attributes are as follows:
-                <li>danceability - describes how suitable a track is for dancing based on a combination of musical elements
-                including tempo, rhythm, stability, beat strength, and overall regularity.</li>
-                <li>energy - represents a perceptual measure of intensity and activity.</li>
-                <li>key - the overall key of the track, with integers mpa to pitches using standard Pitch Class notation.</li>
-                <li>loudness - the overall loudness of a track in decibels.</li>
-                <li>speechiness - detects the presence of spoken words in a track</li>
-                <li>acousticness - a measure from 0 to 1 of weather the track is acoustic.</li>
-                <li>instrumentalness - predicts whether a track contain no vocals.</li>
-                <li>liveness - detects the presence of an audience in the recording.</li>
-                <li>valence - the musical positiveness conveyed by a track</li>
-                <li>tempo - the overall estimated temp of a track in beats per minute</li>
-                Learn more information of <a href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/">Spotify's API Audio Features</a>.
             </div>
         </div>
         <div class="col-sm-2 sidenav"></div>

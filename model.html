@@ -70,8 +70,66 @@
         <div class="col-sm-2 sidenav"></div>
         <div class="col-sm-8 text-left">
             <h1>Model</h1>
-            <p>...</p>
+            <h2>Goal</h2>
+            The purpose of this model is to recommend songs to add to a given playlist. Ideally the algorithm will recommend
+            songs that would "fit well" in the playlist based on the playlist attributes. For example, if the input is a
+            playlist of pop songs, a good model will recommend a similar pop song.
+
+            <!--Data Selection-->
+            <hr>
+            <h2>Data Selection</h2>
+            Our Million Playlist Dataset offered 1 million playlists. This would be computationally slow and difficult to work with.
+            In addition to the size, we also learned from our exploratory data analysis that a majority of those playlists had
+            only 1 follower. Playlists with more followers are more reliable and credible to use because it shows that the
+            collection of songs are cohesive to a common theme that encourages users to follow to playlist. To deal with the larger
+            dataset and also create a dataset with reliable playlists, we trimmed the dataset to have playlists with 8 or
+            more followers.
+            <br><br>
+            From trimming our dataset, we calculated to following statistics:
+            <li>Number of playlists: 11173</li>
+            <li>Average number of tracks per playlist: 100.4752</li>
+            <li>Average durations (ms) of playlists: 23785654.491</li>
+            <li>Total number of tracks: 263985</li>
+            <br>
+            This is enough data to train and test our model.
+
+            <!--Algo-->
+            <hr>
+            <h2>Recommending Algorithm</h2>
+            <h3>Train/Test</h3>
+            We split our trimmed dataset into a train and test set, with our training set being 80% of our dataset.
+
+            <h3>Input</h3>
+            Our alogrithm takes in a playlist with 30% of the songs "missing". The algorithm now needs to predict the 30%
+            of the missing songs.
+
+            <h3>Layer 1</h3>
+            The first layer of our algorithm takes the input playlist and finds the playlist in the training set with the
+            the most number of songs in common. Since we care about the credibility of the playlist and we measure that by
+            how popular the playlist is, we then weigh the playlists by the number of follows it has. Playlists with the most
+            song overlap and the highest number of followers have the highest similarity score.
+            <br>
+            Our algorithm recommends over 300 songs. We fill up a list of at least 300 recommended songs by taking songs from the most similar
+            playlist that do not exist in the input playlist. We continue to iterate over the playlists (most similar playlists first)
+            until we reach over 300 recommended songs.
+
+            <h3>Layer 2</h3>
+            Our second layer of our algorithm adds a level of song similarity to the model. Using the Spotify API, we find the
+            10 attribute values (explained in Data Description) of the input playlist and find the average value for each attribute
+            for the input playlist. We then find the 10 attribute values for each song in the list of recommended songs from
+            Layer 1 and find the 10 attribute values for each.
+            <br>
+            After we have a list of the average attributes for the input playlist and also have collected all the attributes
+            for each of the recommended songs, we then take the euclidean distance from each recommended song's attributes
+            to the average attribute's of the input playlist. We take the 300 smallest distances and recommend those 300 songs.
+
+            <h3>Output</h3>
+            Using only the first layer, the output is a list of 300 or more songs. Using both the first and second layer,
+            the output is a list of exactly 300 songs.
+            <hr>
+            <br>
         </div>
+
         <div class="col-sm-2 sidenav"></div>
     </div>
 </div>
