@@ -109,7 +109,7 @@
             the most number of songs in common. Since we care about the credibility of the playlist and we measure that by
             how popular the playlist is, we then weigh the playlists by the number of follows it has. Playlists with the most
             song overlap and the highest number of followers have the highest similarity score.
-            <br>
+            <br><br>
             Our algorithm recommends over 300 songs. We fill up a list of at least 300 recommended songs by taking songs from the most similar
             playlist that do not exist in the input playlist. We continue to iterate over the playlists (most similar playlists first)
             until we reach over 300 recommended songs.
@@ -119,7 +119,7 @@
             10 attribute values (explained in Data Description) of the input playlist and find the average value for each attribute
             for the input playlist. We then find the 10 attribute values for each song in the list of recommended songs from
             Layer 1 and find the 10 attribute values for each.
-            <br>
+            <br><br>
             After we have a list of the average attributes for the input playlist and also have collected all the attributes
             for each of the recommended songs, we then take the euclidean distance from each recommended song's attributes
             to the average attribute's of the input playlist. We take the 300 smallest distances and recommend those 300 songs.
