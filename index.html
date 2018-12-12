@@ -129,6 +129,9 @@
             <div class="col-sm-8 text-left">
                 <!--Data-->
                 <h2>Data</h2>
+                After our Exploratory Data Analysis, we narrowed down our resources two resources: The <b>Million Playlist
+                Dataset</b> and the <b>Spotify API</b>.
+
                 <h3>Million Playlist Dataset</h3>
                 The <b>Million Playlist Dataset</b> contains 1,000,000 playlists created by users on the Spotify platform.
                 These playlists were created during the period of January 2010 through October 2017. Each playlist in
@@ -189,7 +192,22 @@
 
                 <!--Spotify-->
                 <h3>Spotify API</h3>
-                After our Exploratory Data Analysis, realized that our data was not
+                After our Exploratory Data Analysis, realized that our data was not detailed enough at the song level. We
+                wanted a model that could recommend songs based on song attributes. As a result, we decided to link our
+                Million Playlist Dataset (using the Spotify URI for the track) and draw song attributes from the Spotify API. The
+                song attributes are as follows:
+                <li>danceability - describes how suitable a track is for dancing based on a combination of musical elements
+                including tempo, rhythm, stability, beat strength, and overall regularity.</li>
+                <li>energy - represents a perceptual measure of intensity and activity.</li>
+                <li>key - the overall key of the track, with integers mpa to pitches using standard Pitch Class notation.</li>
+                <li>loudness - the overall loudness of a track in decibels.</li>
+                <li>speechiness - detects the presence of spoken words in a track</li>
+                <li>acousticness - a measure from 0 to 1 of weather the track is acoustic.</li>
+                <li>instrumentalness - predicts whether a track contain no vocals.</li>
+                <li>liveness - detects the presence of an audience in the recording.</li>
+                <li>valence - the musical positiveness conveyed by a track</li>
+                <li>tempo - the overall estimated temp of a track in beats per minute</li>
+                Learn more information of <a href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/">Spotify's API Audio Features</a>.
             </div>
         </div>
         <div class="col-sm-2 sidenav"></div>
