@@ -243,10 +243,19 @@
                 a result, we decided to move forward with using the Million Playlist Dataset and accessing the Spotify API.
                 Since the Million Playlist Dataset included the track Spotify URI, we were able to access the song attributes
                 quickly.
+                <br><br>
+                We explored the Audio Features from the Spotify API and found these distributions:
+                <br><br>
+                <img src="img/scores.png" style="width: 800px; height:350px">
+                <br><br>
+                We then scattered the variables against each other to see if we found any significant patterns:
+                <br><br>
+                <img src="img/matrix.png" style="width: 800px; height:800px">
+                <br><br>
+                Since we aren't regressing on the Audio Features, the collinearity between features doesn't matter. We indeed
+                to use the features as a vector to find euclidean distance between other points.
                 <hr>
             </div>
-
-
         </div>
         <div class="col-sm-2 sidenav"></div>
     </div>
