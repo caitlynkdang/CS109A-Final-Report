@@ -98,12 +98,20 @@
             <li>Accuracy: 0.16</li>
 
             <h2>Model: Layer 1 without weights + Layer 2</h2>
-            The last model we tested was without the weights in Layer 1, since it performed worse, and adding
+            For this model we tested was without the weights in Layer 1, since it performed worse, and adding
             Layer 2. We see that the accuracy score is still lower the first model. We hypothesize that
             this is because audio features/ attributes do not have a subjective layer that is necessary to
             recommend songs.
 
             <li>Accuracy: 0.21</li>
+
+            <h2>Model: Layer 1 with weights + Layer 2</h2>
+            The last model is with weights and layer 2. This modeled perform the worse out of all four models. We hypothesize
+            that this model performed the worse based on the results we see from the two models above. We see that
+            adding weights makes the model worse and adding layer 2 makes the model worse. It is not surprising that adding
+            them both will have a negative affect on the model accuracy.
+
+            <li>Accuracy: 0.12</li>
 
 
             <hr>
